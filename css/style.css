@@ -2,16 +2,15 @@
   display: grid;
   grid-template-areas:
     'header header header'
-    'content content sidebar'
-    'box-1 box-2 box-3'
+    'sidebar content content'
+    'box-1 box-2 box-2'
+    'box-3 box-3 box-3'
     'footer footer footer';
   grid-gap: 1rem;
 }
 
 .header {
   grid-area: header;
-  display: flex;
-  flex-direction: column;
   text-align: center;
 }
 
@@ -49,4 +48,17 @@
 .footer {
   border: 1px #ccc solid;
   padding: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-areas:
+      'header'
+      'content'
+      'sidebar'
+      'box-1'
+      'box-2 '
+      'box-3'
+      'footer';
+  }
 }
